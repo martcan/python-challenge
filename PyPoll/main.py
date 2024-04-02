@@ -4,8 +4,9 @@ import csv
 csvpath=os.path.join('Resources','election_data.csv')
 
 total_count=0
+#create the candidates array 
 candidates=[]
-#create a dictionary to count the votes for each candidate
+#create a dictionary to count the votes for each candidate. Basically each candidate is a key, and their vote count is a value
 candidates_dictionary={}
 
 with open(csvpath) as csvfile:
@@ -23,8 +24,7 @@ with open(csvpath) as csvfile:
      if candidate in candidates_dictionary:
         candidates_dictionary[candidate]=candidates_dictionary[candidate]+1
      else:
-          candidates_dictionary[candidate]=1
-
+        candidates_dictionary[candidate] = 1 #this is the initial value when the dictionary is empty
 #Now, we have the dictionary of each candidate with the total votes as value-key pair
 #we print the election results
 print(f"Election Results")
